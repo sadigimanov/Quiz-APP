@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz APP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        nunito: ["Nunito Sans", "sans-serif"],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-nunito">
+
+    <div class="fixed inset-0 bg-white flex items-center justify-center hidden">
+        <button class="h-[50px] px-[28px] bg-[#FFA722] text-white rounded-lg">Start</button>
+    </div>
+    <div class="w-[600px] mx-auto my-[50px] border">
+        <div class="bg-[#F0FF0F0] relative flex items-center justify-between px-[14px] py-[7px]">
+            <span class="font-semibold text-[18px]">Quiz APP</span>
+            <div class="bg-[#626262] py-[5px] px-[8px] text-white rounded-lg">
+                <span>Time:</span>
+                <span id="time"
+                    class="inline-flex size-[25px] items-center justify-center bg-[#FFA722] rounded-lg">10</span>
+            </div>
+
+            <div style="width: 20%;" class="h-[3px] absolute bottom-0 bg-[#FFA722] left-0">
+
+            </div>
+        </div>
+        <div class="pt-[33px] px-[30px]">
+            <h3 id="question" class="mb-[16px]"></h3>
+            <div id="options" class="space-y-[10px]  mb-[15px]"></div>
+        </div>
+        <div class="flex items-center justify-between py-[8px] px-[15px] bg-[#F0FF0F0] border-t">
+            <span class="bg-[#FFA722] px-[8px] h-[35px] flex items-center text-white rounded-lg">
+                <span id="currentQuestion"></span> / <span id="totalQuestion"></span>
+            </span>
+            <button id="nextQuestion" class="hidden bg-[#2260FF] text-white h-[35px] px-[15px] rounded-lg">Next
+                Question</button>
+        </div>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>
