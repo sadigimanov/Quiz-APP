@@ -26,32 +26,43 @@
 
 <body class="font-nunito">
 
-    <div class="fixed inset-0 bg-white flex items-center justify-center hidden">
-        <button class="h-[50px] px-[28px] bg-[#FFA722] text-white rounded-lg">Start</button>
+    <div class="fixed inset-0 bg-white flex items-center justify-center ">
+        <button id="start" class="h-[50px] px-[28px] bg-[#FFA722] text-white rounded-lg">Start</button>
     </div>
-    <div class="w-[600px] mx-auto my-[50px] border">
-        <div class="bg-[#F0FF0F0] relative flex items-center justify-between px-[14px] py-[7px]">
-            <span class="font-semibold text-[18px]">Quiz APP</span>
-            <div class="bg-[#626262] py-[5px] px-[8px] text-white rounded-lg">
-                <span>Time:</span>
-                <span id="time"
-                    class="inline-flex size-[25px] items-center justify-center bg-[#FFA722] rounded-lg">10</span>
+    <div id="quiz" class="w-[600px] mx-auto my-[50px] border hidden">
+        <div id="quizContent" class="">
+            <div class="bg-[#F0FF0F0] relative flex items-center justify-between px-[14px] py-[7px]">
+                <span class="font-semibold text-[18px]">Quiz APP</span>
+                <div class="bg-[#626262] py-[5px] px-[8px] text-white rounded-lg">
+                    <span>Time:</span>
+                    <span id="time"
+                        class="inline-flex size-[25px] items-center justify-center bg-[#FFA722] rounded-lg">10</span>
+                </div>
+
+                <div id="lineBar" class="h-[3px] transition-all absolute bottom-0 bg-[#FFA722] left-0">
+
+                </div>
             </div>
-
-            <div style="width: 20%;" class="h-[3px] absolute bottom-0 bg-[#FFA722] left-0">
-
+            <div class="pt-[33px] px-[30px]">
+                <h3 id="question" class="mb-[16px]"></h3>
+                <div id="options" class="space-y-[10px]  mb-[15px]"></div>
+            </div>
+            <div class="flex items-center justify-between py-[8px] px-[15px] bg-[#F0FF0F0] border-t">
+                <span class="bg-[#FFA722] px-[8px] h-[35px] flex items-center text-white rounded-lg">
+                    <span id="currentQuestion"></span> / <span id="totalQuestion"></span>
+                </span>
+                <button id="nextQuestion" class="hidden bg-[#2260FF] text-white h-[35px] px-[15px] rounded-lg">Next
+                    Question</button>
             </div>
         </div>
-        <div class="pt-[33px] px-[30px]">
-            <h3 id="question" class="mb-[16px]"></h3>
-            <div id="options" class="space-y-[10px]  mb-[15px]"></div>
-        </div>
-        <div class="flex items-center justify-between py-[8px] px-[15px] bg-[#F0FF0F0] border-t">
-            <span class="bg-[#FFA722] px-[8px] h-[35px] flex items-center text-white rounded-lg">
-                <span id="currentQuestion"></span> / <span id="totalQuestion"></span>
-            </span>
-            <button id="nextQuestion" class="hidden bg-[#2260FF] text-white h-[35px] px-[15px] rounded-lg">Next
-                Question</button>
+        <div id="answerContent" class="p-10 text-center hidden">
+            <h2 class="font-bold text-3xl">Imtahan neticeleri</h2>
+            <div>
+                <p><b>Duz cavablarin sayi:</b> <span id="answerSuccess">0</span></p>
+                <p><b>Sehv cavablarin sayi:</b> <span id="answerError">0</span></p>
+                <p><b>Cavablanmayan sual sayi:</b> <span id="answerNone">0</span></p>
+                <button id="restart" class="h-[50px] px-[28px] bg-[#FFA722] text-white rounded-lg">Yeniden basla</button>
+            </div>
         </div>
     </div>
 
